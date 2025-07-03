@@ -37,7 +37,7 @@
       <q-btn 
         color="primary" 
         rounded 
-        @click="$router.push('/garage/add')"
+        @click="router.push('/garage/add')"
         class="q-px-lg"
       >
         <q-icon name="add" class="q-mr-sm" />
@@ -98,7 +98,7 @@
             v-if="!maintenanceStore.searchQuery"
             color="primary" 
             rounded 
-            @click="$router.push('/add')"
+            @click="router.push('/add')"
             class="q-px-lg"
           >
             <q-icon name="add" class="q-mr-sm" />
