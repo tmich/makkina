@@ -253,9 +253,9 @@ const recordMenu = reactive({
   record: null as MaintenanceRecord | null
 })
 
-const setRecordButtonRef = (id: string, el: HTMLElement | null) => {
+const setRecordButtonRef = (id: string, el: any) => {
   if (el) {
-    recordButtonRefs.value[id] = el
+    recordButtonRefs.value[id] = el.$el ?? el
   } else {
     delete recordButtonRefs.value[id]
   }
