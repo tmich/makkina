@@ -9,7 +9,6 @@ import { onMounted } from 'vue'
 import { useMaintenanceStore } from './stores/maintenance'
 import { useVehiclesStore } from './stores/vehicles'
 
-const maintenanceStore = useMaintenanceStore()
 const vehiclesStore = useVehiclesStore()
 
 onMounted(() => {
@@ -20,7 +19,7 @@ onMounted(() => {
 })
 
 const checkUpcomingMaintenance = () => {
-  const upcoming = maintenanceStore.upcomingMaintenance
+  const upcoming = useMaintenanceStore().upcomingMaintenance
   const now = new Date()
   
   upcoming.forEach(record => {
