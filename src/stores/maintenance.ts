@@ -212,6 +212,16 @@ export const useMaintenanceStore = defineStore('maintenance', () => {
       reader.readAsText(file)
     })
   }
+
+  const clearAllData = () => {
+    records.value = []
+    saveToStorage()
+    Notify.create({
+      type: 'positive',
+      message: 'All maintenance records have been cleared.',
+      position: 'top'
+    })
+  }
   
   // Initialize store
   loadFromStorage()
@@ -232,6 +242,7 @@ export const useMaintenanceStore = defineStore('maintenance', () => {
     deleteRecord,
     getRecord,
     exportData,
-    importData
+    importData,
+    clearAllData
   }
 })

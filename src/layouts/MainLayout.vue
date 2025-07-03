@@ -46,13 +46,13 @@
       overlay
       behavior="mobile"
       class="bg-dark text-white"
-      width="280"
-    >
+      :width="250"
+      >
       <q-list class="q-pt-lg">
         <q-item 
           clickable 
           v-ripple 
-          @click="$router.push('/garage')"
+          @click="router.push('/garage')"
           class="rounded-borders q-ma-sm"
         >
           <q-item-section avatar>
@@ -64,7 +64,7 @@
         <q-item 
           clickable 
           v-ripple 
-          @click="$router.push('/settings')"
+          @click="router.push('/settings')"
           class="rounded-borders q-ma-sm"
         >
           <q-item-section avatar>
@@ -107,7 +107,7 @@
 
     <!-- Floating Action Button -->
     <q-page-sticky 
-      v-if="$route.name === 'home'"
+      v-if="route.name === 'home'"
       position="bottom-right" 
       :offset="[18, 18]"
     >
@@ -115,7 +115,7 @@
         fab
         icon="add"
         color="primary"
-        @click="$router.push('/add')"
+        @click="router.push('/add')"
         class="fab-shadow"
         size="lg"
       />
@@ -180,10 +180,13 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { useMaintenanceStore } from '../stores/maintenance'
 import { useVehiclesStore } from '../stores/vehicles'
 import { date } from 'quasar'
 
+const route = useRoute()
+const router = useRouter()
 const maintenanceStore = useMaintenanceStore()
 const vehiclesStore = useVehiclesStore()
 const showMenu = ref(false)

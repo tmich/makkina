@@ -8,7 +8,7 @@
           round
           icon="arrow_back"
           color="white"
-          @click="$router.back()"
+          @click="router.back()"
           class="q-mr-md"
         />
         <div class="text-h5 text-white text-weight-medium">Settings</div>
@@ -207,10 +207,10 @@ onMounted(() => {
   const savedReminderDays = LocalStorage.getItem('makkina-reminder-days')
   
   if (savedNotifications !== null) {
-    notificationsEnabled.value = savedNotifications
+    notificationsEnabled.value = savedNotifications as boolean
   }
   if (savedReminderDays !== null) {
-    reminderDays.value = savedReminderDays
+    reminderDays.value = savedReminderDays as number
   }
 })
 
@@ -249,8 +249,7 @@ const confirmClearData = () => {
     persistent: true,
     color: 'negative'
   }).onOk(() => {
-    LocalStorage.remove('makkina-maintenance-records')
-    maintenanceStore.records.length = 0
+    maintenanceStore.clearAllData()
     router.push('/')
   })
 }
