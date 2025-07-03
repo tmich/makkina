@@ -17,7 +17,7 @@
         <q-btn 
           color="primary" 
           rounded 
-          @click="$router.push('/garage/add')"
+          @click="router.push('/garage/add')"
           class="q-px-lg"
         >
           <q-icon name="add" class="q-mr-sm" />
@@ -116,7 +116,7 @@
         fab
         icon="add"
         color="primary"
-        @click="$router.push('/garage/add')"
+        @click="router.push('/garage/add')"
         class="fab-shadow"
         size="lg"
       />

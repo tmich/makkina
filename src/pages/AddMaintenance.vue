@@ -8,7 +8,7 @@
           round
           icon="arrow_back"
           color="white"
-          @click="$router.back()"
+          @click="router.back()"
           class="q-mr-md"
         />
         <div class="text-h5 text-white text-weight-medium">
@@ -28,7 +28,7 @@
               flat 
               color="dark" 
               label="Add Vehicle" 
-              @click="$router.push('/garage/add')"
+              @click="router.push('/garage/add')"
             />
           </template>
         </q-banner>
@@ -195,7 +195,7 @@
                   outline
                   color="grey-5"
                   label="Cancel"
-                  @click="$router.back()"
+                  @click="router.back()"
                   class="full-width action-btn"
                   size="lg"
                 />
