@@ -8,7 +8,7 @@
           round
           icon="arrow_back"
           color="white"
-          @click="$router.back()"
+          @click="router.back()"
           class="q-mr-md"
         />
         <div class="text-h5 text-white text-weight-medium">
@@ -119,6 +119,8 @@
               <q-select
                 v-model="form.fuelType"
                 :options="fuelTypeOptions"
+                emit-value
+                map-options
                 filled
                 dark
                 :rules="[val => !!val || 'Fuel type is required']"
@@ -166,7 +168,7 @@
                   outline
                   color="grey-5"
                   label="Cancel"
-                  @click="$router.back()"
+                  @click="router.back()"
                   class="full-width action-btn"
                   size="lg"
                 />
